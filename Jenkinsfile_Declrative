@@ -1,0 +1,55 @@
+pipeline {
+tools {
+  maven 'maven3.8.7'
+}
+options {
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')
+}
+triggers {
+  pollSCM '* * * * *'
+}
+agent any
+stages{
+stage('checkoutCode'){
+steps{
+checkout scmGit(branches: [[name: '*/dev']], extensions: [], userRemoteConfigs: [[credentialsId: 'githubid', url: 'https://github.com/anilsoni007/java-web-application.git']])
+}
+}
+stage('Build'){
+steps{
+sh "mvn clean package"
+}
+}
+stage('ExecuteSQReport'){
+steps{
+sh "mvn clean sonar:sonar"
+}
+}
+stage('UploadArtifact'){
+steps{
+sh "mvn clean deploy"
+}
+}
+stage('DeployToTomcat'){
+steps{
+sshagent(['ssh_auth']) {
+sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@43.205.240.196:/opt/apache-tomcat-9.0.70/webapps/"
+}
+}
+}
+}
+post{
+success{
+emailext body: '''Build is over - Success
+
+Regards
+Anil Soni''', subject: 'Build is over - Success', to: 'anilsoni181@gmail.com'
+}
+failure{
+emailext body: '''Build is over - Failure
+
+Regards
+Anil Soni''', subject: 'Build is over - Failure', to: 'anilsoni181@gmail.com'
+}
+}
+}
