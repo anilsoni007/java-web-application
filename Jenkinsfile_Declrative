@@ -5,9 +5,11 @@ tools {
 options {
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')
 }
+/*
 triggers {
   pollSCM '* * * * *'
 }
+*/
 agent any
 stages{
 stage('checkoutCode'){
