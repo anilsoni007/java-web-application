@@ -1,48 +1,41 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
+	
 	<groupId>com.mt</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-
+	
 	<name>maven-web-application</name>
 
 	<description>Maven Web Project for Java Project</description>
 
 	<organization>
-		<name>Devopsjunkie</name>
-		<url>https://www.google.com</url>
+		<name>anilsoni</name>
+		<url>http://soni.com/</url>
 	</organization>
-        <!--
+
 	<properties>
 		<jdk.version>1.8</jdk.version>
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://3.108.237.39:9000/</sonar.host.url>
-		<sonar.login>admin</sonar.login>
-		<sonar.password>admin123</sonar.password>
+		<sonar.host.url>http://172.31.13.32:9000/</sonar.host.url>
+		<sonar.login>squ_712050b2c1457b928a5a5cf299eaa95d074a0b08</sonar.login>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 	</properties>
-         -->
-	<dependencies>
-		<dependency>
-                    <groupId>javax</groupId>
-                    <artifactId>javaee-api</artifactId>
-                    <version>8.0</version>
-                    <scope>provided</scope>
-                </dependency>
 
+	<dependencies>
+		
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
 			<version>20160212</version>
 		</dependency>
-
+		
 		<!-- test dependencies -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -51,6 +44,12 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>org.mockito</groupId>
@@ -81,7 +80,7 @@
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
+		
 		<!-- provided dependencies -->
 
 		<dependency>
@@ -90,46 +89,36 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
-
+		
 	</dependencies>
-
+	
 	<distributionManagement>
-
+	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Anil repositories</name>
-	      <url>http://13.127.111.213:9999/nexus/repository/walmart-release/</url>
+	      <name>anil soni</name>
+	      <url>http://172.31.9.109:9980/anilsoni/repository/facebook-release/</url>
 	    </repository>
-
+	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Anil repositories </name>
-	      <url>http://13.127.111.213:9999/nexus/repository/walmart-snapshot/</url>
+	      <name>anil soni </name>
+	      <url>http://172.31.9.109:9980/anilsoni/repository/facebook-snapshot/</url>
 	    </snapshotRepository>
-
+	    
 	</distributionManagement>
-
+	
 	<build>
 		<finalName>maven-web-application</finalName>
-
+		
 		<plugins>
-			
-                       <plugin>
-                         <groupId>org.apache.maven.plugins</groupId>
-                         <artifactId>maven-war-plugin</artifactId>
-                         <version>3.2.3</version> <!-- Use the appropriate version -->
-                       </plugin>
-       
-   
-
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.2.3</version>
+				<version>3.3</version>
 				<configuration>
-					<source>17</source>
-					<target>17</target>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
 
@@ -156,9 +145,9 @@
 					<wtpContextName>maven-web-application</wtpContextName>
 				</configuration>
 			</plugin>
-
-             </plugins>
+			
+</plugins>
 	</build>
-
-
+	
+	
 </project>
