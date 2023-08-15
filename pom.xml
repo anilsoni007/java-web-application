@@ -28,6 +28,26 @@
 
         <!-- ... Other dependencies ... -->
     </dependencies>
+    <build>
+        <finalName>maven-web-application</finalName>
+
+        <plugins>
+            <!-- Other plugins... -->
+
+            <!-- Add the Maven Compiler Plugin configuration here -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version> <!-- Use the appropriate version -->
+                <configuration>
+                    <source>1.8</source> <!-- Update to the desired Java version -->
+                    <target>1.8</target> <!-- Update to the desired Java version -->
+                </configuration>
+            </plugin>
+
+            <!-- Other plugins... -->
+        </plugins>
+    </build>
 
     <!-- ... Other configuration ... -->
 </project>
