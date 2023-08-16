@@ -17,13 +17,11 @@ spec:
         app: mavenwebapp
     spec:
       containers:
-      imagePullSecrets:
-        - ecrsecret
         - name: mavenwebappcontainer
           image: 991323962418.dkr.ecr.ap-south-1.amazonaws.com/anil_ecr
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+           - containerPort: 8080
           resources:
             requests:
               cpu: 200m
@@ -31,6 +29,8 @@ spec:
             limits:
               cpu: 500m
               memory: 512Mi
+      imagePullSecrets:
+       - ecrsecret
 ---
 apiVersion: v1
 kind: Service
