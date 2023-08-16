@@ -17,6 +17,8 @@ spec:
         app: mavenwebapp
     spec:
       containers:
+      imagePullSecrets:
+        - ecrsecret
         - name: mavenwebappcontainer
           image: 991323962418.dkr.ecr.ap-south-1.amazonaws.com/anil_ecr
           imagePullPolicy: Always
