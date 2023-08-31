@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome Mr Anil Soni. Bengaluru,Karnataka </h1>
-<h1 align="center"> Be the best DevOps Engineer</h1>
+<h1 align="center"> DevOps Engineer</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
