@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Welcome Mr Anil Soni</title>
+<title>Welcome Anil Soni</title>
 <link href="images/logo.jpg" rel="icon">
 </head>
 </head>
