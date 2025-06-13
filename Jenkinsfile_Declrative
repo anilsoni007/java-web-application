@@ -43,13 +43,13 @@ success{
 emailext body: '''Build is over - Success
 
 Regards
-Anil Soni''', subject: 'Build is over - Success', to: 'anilsoni181@gmail.com'
+Anil Soni''', subject: 'Build is over - Success', to: 'anil@gmail.com'
 }
 failure{
 emailext body: '''Build is over - Failure
 
 Regards
-Anil Soni''', subject: 'Build is over - Failure', to: 'anilsoni181@gmail.com'
+Anil Soni''', subject: 'Build is over - Failure', to: 'anil@gmail.com'
 }
 }
 }
