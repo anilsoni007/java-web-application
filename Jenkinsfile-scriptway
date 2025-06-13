@@ -23,7 +23,7 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@43
 }
 }
 stage('SendEmailNotification'){
-emailext body: '''Build over
+emailext body: '''Build-over
 Regards
 Anil Soni
 DevOps Engineer''', subject: 'BuildOver', to: 'x1@gmail.com'
