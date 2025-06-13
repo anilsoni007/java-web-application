@@ -46,7 +46,7 @@ Regards
 Anil Soni''', subject: 'Build is over - Success', to: 'anilsoni181@gmail.com'
 }
 failure{
-emailext body: '''Build isover - Failure
+emailext body: '''Build is over - Failure
 
 Regards
 Anil Soni''', subject: 'Build is over - Failure', to: 'anilsoni181@gmail.com'
