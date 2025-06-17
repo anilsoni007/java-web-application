@@ -1,0 +1,54 @@
+pipeline {
+    tools {
+          maven 'maven3.0'
+        }
+
+    agent any
+    stages {
+        stage('CheckoutCode') {
+            steps {
+                git branch: 'main', url: 'https://github.com/anilsoni007/java-web-application.git'
+            }
+        }
+        stage('SonarAnaylysis'){
+            steps {
+                withCredentials([string(credentialsId: 'SONAR_AUTH_TOKEN', variable: 'SONAR_AUTH_TOKEN')]) {
+   sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=maven-web-application -Dsonar.organization=soni -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_AUTH_TOKEN'
+}
+            }
+        }
+        stage('SCA_Anaylysis_withSynk'){
+            steps {
+                withCredentials([string(credentialsId: 'SNYK_TOKEN', variable: 'SNYK_TOKEN')]) {
+                  sh 'mvn snyk:test -fn'
+           }
+            }
+        }
+        stage('Buildimage'){
+            steps {
+                script{
+                 app =  docker.build("anil_ecr:${BUILD_NUMBER}")
+                 }
+               
+            }
+        }
+        
+        stage('PushtoECR'){
+            steps {
+                    script{
+                    docker.withRegistry('https://xxxxx.dkr.ecr.ap-south-1.amazonaws.com', 'ecr:ap-south-1:ecr_creds') {
+                    app.push("${BUILD_NUMBER}")
+                    }
+}
+            }
+        }
+        stage('k8s_deployment'){
+            steps{
+withKubeConfig(caCertificate: '', clusterName: 'kubernetes', contextName: 'kubernetes-admin@kubernetes', credentialsId: 'kubelogin', namespace: 'sec-ns', restrictKubeConfigAccess: false, serverUrl: 'https://xx.3xx.0.68:6443') {
+    sh 'kubectl delete all --all -n sec-ns'
+    sh 'kubectl apply -f mavenwebappdeployment.yaml -n sec-ns'
+}
+            }
+        }
+    }
+}

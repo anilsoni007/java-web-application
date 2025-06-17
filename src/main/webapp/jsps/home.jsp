@@ -4,13 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Welcome Mr Anil Soni</title>
+<title>Welcome Anil Soni</title>
 <link href="images/logo.jpg" rel="icon">
 </head>
 </head>
 <body>
+<<<<<<< HEAD
 <h1 align="center">Welcome Mr Anil Soni. Bengaluru, . This is github webook testing code </h1>
 <h1 align="center"> Be the best DevOps Engineer</h1>
+=======
+<h1 align="center">Welcome Mr Anil Soni. Bengaluru,Karnataka </h1>
+<h1 align="center"> DevOps Engineer</h1>
+>>>>>>> 63ebdffffc9e842e5da6415ca07cec8e8ec7595e
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
