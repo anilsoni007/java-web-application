@@ -21,6 +21,9 @@ jobs:
         run: mvn --version
       - name: building jar
         run: mvn clean package
+      - name: check path
+        run: |
+          echo $PWD
       - name: upload jar
         uses: actions/upload-artifact@v4
         with:
