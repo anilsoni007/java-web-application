@@ -27,5 +27,5 @@ jobs:
       - name: upload jar
         uses: actions/upload-artifact@v4
         with:
-          name: jar-artifact
-          path: /home/runner/work/java-web-application/java-web-application/target/*.jar
+          name: war-artifact
+          path: target/*.war
