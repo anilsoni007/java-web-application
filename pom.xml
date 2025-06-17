@@ -5,12 +5,7 @@
 	<groupId>com.mt</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
-<<<<<<< HEAD
-	<version>0.0.1-SNAPSHOT</version>
-=======
 	<version>0.0.2-SNAPSHOT</version>
->>>>>>> 63ebdffffc9e842e5da6415ca07cec8e8ec7595e
-	
 	<name>maven-web-application</name>
 
 	<description>Maven Web Project for Java Project</description>
@@ -25,13 +20,8 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-<<<<<<< HEAD
-		<sonar.host.url>http://23.20.64.88:9000/</sonar.host.url>
-		<sonar.login>sqa_4b3100aa84db941216c697b5ac9dc0c337290af2</sonar.login>
-=======
 		<sonar.host.url>http://172.31.13.32:9000/</sonar.host.url>
 		<sonar.login>squ_712050b2c1457b928a5a5cf299eaa95d074a0b08</sonar.login>
->>>>>>> 63ebdffffc9e842e5da6415ca07cec8e8ec7595e
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
