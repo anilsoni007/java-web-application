@@ -21,7 +21,7 @@ jobs:
         run: mvn --version
       - name: building jar
         run: mvn clean package
-      - name: check path
+      - name: check path of war
         run: |
           echo $PWD
       - name: upload jar
@@ -30,6 +30,7 @@ jobs:
           name: war-artifact
           path: target/*.war
   SAST_SCAN:
+    needs: Build
     env:
       SONAR_HOST_URL: http://ec2-54-89-220-216.compute-1.amazonaws.com:9000
     runs-on: ubuntu-latest
@@ -41,7 +42,7 @@ jobs:
         # Disabling shallow clones is recommended for improving the relevancy of reporting
         fetch-depth: 0
     - name: SonarQube Scan
-      uses: SonarSource/sonarqube-scan-action@v5.2.0 # Ex: v4.1.0, See the latest version at https://github.com/marketplace/actions/official-sonarqube-scan
+      uses: SonarSource/sonarqube-scan-action@v5.2.0 
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ env.SONAR_HOST_URL }}
