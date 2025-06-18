@@ -21,7 +21,6 @@
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
 		<sonar.host.url>http://ec2-54-89-220-216.compute-1.amazonaws.com:9000/</sonar.host.url>
-		<sonar.login>sqa_0eb3baa00495d7da52b5f81642bcacb222c82ec3</sonar.login>
 		<sonar.projectKey>maven-web-application</sonar.projectKey>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
