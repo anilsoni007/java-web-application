@@ -31,7 +31,7 @@ jobs:
           path: target/*.war
   SAST_SCAN:
     env:
-      SONAR_HOST_URL: ec2-54-89-220-216.compute-1.amazonaws.com:9000
+      SONAR_HOST_URL: http://ec2-54-89-220-216.compute-1.amazonaws.com:9000
     runs-on: ubuntu-latest
     steps:
     - name: checkout
