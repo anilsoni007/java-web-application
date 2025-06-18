@@ -34,6 +34,8 @@ jobs:
       SONAR_HOST_URL: ec2-54-89-220-216.compute-1.amazonaws.com:9000
     runs-on: ubuntu-latest
     steps:
+    - name: checkout
+      uses: actions/checkout@v4
     - uses: actions/checkout@v4
       with:
         # Disabling shallow clones is recommended for improving the relevancy of reporting
