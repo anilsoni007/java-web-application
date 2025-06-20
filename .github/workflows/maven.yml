@@ -43,6 +43,14 @@ jobs:
       with:
         # Disabling shallow clones is recommended for improving the relevancy of reporting
         fetch-depth: 0
+    - name: Set up JDK 11 for x64
+      uses: actions/setup-java@v4
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+        architecture: x64
+    - name: Compile classes
+      run: mvn compile test-compile
     - name: SonarQube Scan
       uses: SonarSource/sonarqube-scan-action@v5.2.0 
       env:
