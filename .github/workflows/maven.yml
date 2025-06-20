@@ -49,8 +49,8 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         architecture: x64
-    - name: Compile classes
-      run: mvn compile test-compile
+    - name: Run tests with coverage
+      run: mvn clean test
     - name: SonarQube Scan
       uses: SonarSource/sonarqube-scan-action@v5.2.0 
       env:
