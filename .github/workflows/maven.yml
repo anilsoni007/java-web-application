@@ -73,14 +73,14 @@ jobs:
       with:
         name: war-artifact
         path: target/
-    - name: Start application
+    - name: Start application with Jetty
       run: |
-        nohup java -jar target/*.war &
-        sleep 30
-        curl -f http://localhost:8080/employee/getEmployeeDetails || exit 1
+        mvn jetty:run &
+        sleep 60
+        curl -f http://localhost:8080/maven-web-application/employee/getEmployeeDetails || exit 1
     - name: OWASP ZAP Scan
       uses: zaproxy/action-baseline@v0.12.0
       with:
-        target: 'http://localhost:8080'
+        target: 'http://localhost:8080/maven-web-application'
         rules_file_name: '.zap/rules.tsv'
         cmd_options: '-a'
