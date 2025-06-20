@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.mt.services.EmployeeServiceIntegrationTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.736 s <<< FAILURE! - in com.mt.services.EmployeeServiceIntegrationTest
-testGetEmployeeDetails_ReturnsJsonResponse(com.mt.services.EmployeeServiceIntegrationTest)  Time elapsed: 0.068 s  <<< FAILURE!
-java.lang.AssertionError: Content type expected:<application/json;charset=UTF-8> but was:<text/plain;charset=ISO-8859-1>
-	at com.mt.services.EmployeeServiceIntegrationTest.testGetEmployeeDetails_ReturnsJsonResponse(EmployeeServiceIntegrationTest.java:40)
-
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.599 s - in com.mt.services.EmployeeServiceIntegrationTest

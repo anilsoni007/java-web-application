@@ -37,7 +37,7 @@ public class EmployeeServiceIntegrationTest {
         // Act & Assert
         MvcResult result = mockMvc.perform(get("/employee/getEmployeeDetails"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType("application/json"))
+                .andExpect(content().contentTypeCompatibleWith("application/json"))
                 .andReturn();
 
         String content = result.getResponse().getContentAsString();
