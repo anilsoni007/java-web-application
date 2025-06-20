@@ -19,6 +19,8 @@ jobs:
           architecture: x64
       - name: maven version
         run: mvn --version
+      - name: run tests
+        run: mvn test
       - name: building jar
         run: mvn clean package
       - name: check path of war
