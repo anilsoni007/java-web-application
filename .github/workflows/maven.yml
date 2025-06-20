@@ -32,7 +32,7 @@ jobs:
   SAST_SCAN:
     needs: Build
     env:
-      SONAR_HOST_URL: http://ec2-54-89-220-216.compute-1.amazonaws.com:9000
+      SONAR_HOST_URL: http://ec2-44-212-19-198.compute-1.amazonaws.com:9000
     runs-on: ubuntu-latest
     steps:
     - name: checkout
